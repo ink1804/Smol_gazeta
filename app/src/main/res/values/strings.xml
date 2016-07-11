@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Smol_gazeta</string>
 
-    <string-array name="society">
+    <string-array name="society_subs">
         <item>Политика</item>
         <item>Общество</item>
         <item>Власть</item>
@@ -11,19 +11,67 @@
         <item>Официально</item>
         <item>Спорт</item>
     </string-array>
-    <string-array name="habitat">
+    <string-array name="society_keys">
+        <item>vlast</item>
+        <item>society</item>
+        <item>authorities</item>
+        <item>culture</item>
+        <item>education</item>
+        <item>health</item>
+        <item>officially</item>
+        <item>sport</item>
+    </string-array>
+
+    <string-array name="habitat_subs">
         <item>Среда обитания</item>
         <item>Полезное</item>
         <item>Цены</item>
     </string-array>
-    <string-array name="roads">
+    <string-array name="habitat_keys">
+        <item>habitat</item>
+        <item>useful</item>
+        <item>price</item>
+    </string-array>
+
+    <string-array name="roads_subs">
         <item>Дороги</item>
         <item>Авто</item>
     </string-array>
-    <string-array name="accidents">
+    <string-array name="roads_keys">
+        <item>public</item>
+        <item>auto</item>
+    </string-array>
+
+    <string-array name="security_subs">
+        <item>Безопасность</item>
+    </string-array>
+    <string-array name="security_keys">
+        <item>security</item>
+    </string-array>
+
+    <string-array name="crime_subs">
         <item>Криминал</item>
         <item>Проишествия</item>
     </string-array>
+    <string-array name="crime_keys">
+        <item>crime</item>
+        <item>accident</item>
+    </string-array>
+
+    <string-array name="documents_subs">
+        <item>Документы</item>
+    </string-array>
+    <string-array name="documents_keys">
+        <item>documents</item>
+    </string-array>
+
+    <string-array name="afisha_subs">
+        <item>Афиша</item>
+    </string-array>
+    <string-array name="afisha_keys">
+        <item>afisha</item>
+    </string-array>
+
     <!--<string name="collapsed">collapsed: %s</string>-->
     <!--<string name="expanded">expanded: %s</string>-->
     <string name="theme_home">Главная</string>

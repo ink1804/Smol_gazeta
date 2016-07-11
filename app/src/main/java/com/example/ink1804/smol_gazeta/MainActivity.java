@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer = (DrawerLayout)findViewById(R.id.main_layout);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+//        SingleNews_Fragment.newInstance();
 
        // recycler_cardNews = (RecyclerView)findViewById(R.id.recycle_list_of_news);
         recycler_hotNews = (RecyclerView)findViewById(R.id.recycle_hot_news);
@@ -100,6 +101,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        TextView textView = (TextView)findViewById(R.id.subMenu_pager);
         switch (id){
             case R.id.nav_society:
+                String[] subString = getResources().getStringArray(R.array.society);
             //    textView.setText("Общество");
                 break;
             case R.id.nav_habitat:
