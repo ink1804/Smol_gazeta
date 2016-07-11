@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
+        //asd
 //        TextView textView = (TextView)findViewById(R.id.subMenu_pager);
         switch (id){
             case R.id.nav_society:

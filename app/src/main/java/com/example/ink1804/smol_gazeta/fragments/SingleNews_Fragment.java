@@ -43,7 +43,6 @@ public class SingleNews_Fragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.recycleFr);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         parser.parseNewsBlock(gazetaURL,"",context,recyclerView);
-
         return view;
 
     }

@@ -51,7 +51,7 @@
         android:layout_below="@id/subMenu_pager"
         android:layout_toLeftOf="@+id/reclame"
         android:name="com.example.ink1804.smol_gazeta.fragments.SingleNews_Fragment"
-        tools:layout="@layout/fragment_recycler_news" />
+        tools:layout="@layout/fragment_recycler_news"/>
 
     <ImageView
         android:id="@+id/reclame"
