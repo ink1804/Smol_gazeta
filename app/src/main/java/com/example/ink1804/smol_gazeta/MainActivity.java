@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
        // recycler_cardNews = (RecyclerView)findViewById(R.id.recycle_list_of_news);
         recycler_hotNews = (RecyclerView)findViewById(R.id.recycle_hot_news);
      //   recycler_cardNews.setLayoutManager(new LinearLayoutManager(this));
