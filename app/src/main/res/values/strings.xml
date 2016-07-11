@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Smol_gazeta</string>
+
+    <string-array name="society">
+        <item>Политика</item>
+        <item>Общество</item>
+        <item>Власть</item>
+        <item>Культура</item>
+        <item>Образование</item>
+        <item>Здоровье</item>
+        <item>Официально</item>
+        <item>Спорт</item>
+    </string-array>
+    <string-array name="habitat">
+        <item>Среда обитания</item>
+        <item>Полезное</item>
+        <item>Цены</item>
+    </string-array>
+    <string-array name="roads">
+        <item>Дороги</item>
+        <item>Авто</item>
+    </string-array>
+    <string-array name="accidents">
+        <item>Криминал</item>
+        <item>Проишествия</item>
+    </string-array>
+    <!--<string name="collapsed">collapsed: %s</string>-->
+    <!--<string name="expanded">expanded: %s</string>-->
+    <string name="theme_home">Главная</string>
+    <string name="theme_society">Общество</string>
+    <string name="theme_habitat">Среда обитания</string>
+    <string name="theme_roads">Дороги</string>
+    <string name="theme_security">Безопасность</string>
+    <string name="theme_accidents">Проишествия</string>
+    <string name="theme_documents">Документы</string>
+    <string name="theme_poster">Афиша</string>
+</resources>
