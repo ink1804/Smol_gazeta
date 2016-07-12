@@ -28,10 +28,8 @@ import java.util.List;
  */
 public class SingleNews_Fragment extends Fragment {
 
-    public static final String CAT_NAMES = "cats_names";
-    public static final String CAT_DESCRIPTIONS = "cat_descriptions";
-    public final static String TOP_IMAGE = "top image";
-
+    private String subString,keysString;
+    int position;
     Context context;
     private String gazetaURL = "http://www.smolgazeta.ru";
 
@@ -41,22 +39,22 @@ public class SingleNews_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view  = inflater.inflate(R.layout.fragment_recycler_news,container,false);
-
-        Bundle arguments = getArguments();
-        if (arguments != null) {
-            String catName = arguments.getString(CAT_NAMES);
-            String catDescription = arguments.getString(CAT_DESCRIPTIONS);
-            int topCardResourceId = arguments.getInt(TOP_IMAGE);
-
-        }
-
-        OnCreateFragmentListener listener = (OnCreateFragmentListener)getActivity();
-        context = listener.getContext();
-
         HtmlParser parser = new HtmlParser();
-        RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.recycleFr);
-        recyclerView.setLayoutManager(new LinearLayoutManager(context));
-        parser.parseNewsBlock(gazetaURL,"",context,recyclerView);
+        OnCreateFragmentListener listener = (OnCreateFragmentListener)getActivity();
+
+
+        Bundle args = getArguments();
+        if (args != null) {
+            RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.recycleFr);
+            recyclerView.setLayoutManager(new LinearLayoutManager(context));
+            context = listener.getContext();
+            keysString = args.getString("keysStrings");
+            parser.parseNewsBlock(gazetaURL,keysString,context,recyclerView);
+        }else{
+            RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.recycleFr);
+            recyclerView.setLayoutManager(new LinearLayoutManager(context));
+            context = listener.getContext();
+        parser.parseNewsBlock(gazetaURL,"",context,recyclerView);}
         return view;
 
     }

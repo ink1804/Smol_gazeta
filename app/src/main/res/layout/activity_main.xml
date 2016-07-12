@@ -38,30 +38,22 @@
 
     <android.support.v4.view.ViewPager
         android:id="@+id/subMenu_pager"
-        android:background="#000"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="500dp"
+        android:layout_toLeftOf="@+id/reclame"
         android:textColor="@color/blue_light"
         android:layout_below="@+id/head">
-        <android.support.v4.view.PagerTitleStrip
-            android:id="@+id/pager_title_strip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:background="#33b5e5"
-            android:paddingBottom="4dp"
-            android:paddingTop="4dp"
-            android:textColor="#fff" />
+
     </android.support.v4.view.ViewPager>
 
-    <fragment
-        android:id="@+id/frag"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/subMenu_pager"
-        android:layout_toLeftOf="@+id/reclame"
-        android:name="com.example.ink1804.smol_gazeta.fragments.SingleNews_Fragment"
-        tools:layout="@layout/fragment_recycler_news"/>
+    <!--<fragment-->
+        <!--android:id="@+id/frag"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_below="@id/subMenu_pager"-->
+        <!--android:layout_toLeftOf="@+id/reclame"-->
+        <!--android:name="com.example.ink1804.smol_gazeta.fragments.SingleNews_Fragment"-->
+        <!--tools:layout="@layout/fragment_recycler_news"/>-->
 
     <ImageView
         android:id="@+id/reclame"
@@ -69,7 +61,7 @@
         android:layout_margin="4dp"
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/subMenu_pager"
+        android:layout_below="@+id/head"
         android:background="@drawable/reclame"/>
 </RelativeLayout>
     <android.support.design.widget.NavigationView

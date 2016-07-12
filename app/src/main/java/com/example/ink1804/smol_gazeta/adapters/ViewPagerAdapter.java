@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.example.ink1804.smol_gazeta.fragments.SingleNews_Fragment;
 
@@ -12,13 +15,13 @@ import com.example.ink1804.smol_gazeta.fragments.SingleNews_Fragment;
  */
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
-    String[] subString;
-    String key;
+    String[] subStrings;
+    String[] keyStrings;
 
-    public ViewPagerAdapter(FragmentManager fm, String key, String[] subString) {
+    public ViewPagerAdapter(FragmentManager fm, String[] subStrings, String[] keyStrings) {
         super(fm);
-        this.key = key;
-        this.subString = subString;
+        this.subStrings = subStrings;
+        this.keyStrings = keyStrings;
     }
 
     public ViewPagerAdapter(FragmentManager fm) {
@@ -26,16 +29,32 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     }
 
     @Override
+    public CharSequence getPageTitle(int position) {
+        return super.getPageTitle(position);
+    }
+
+    @Override
+    public void destroyItem(ViewGroup container, int position, Object object) {
+        super.destroyItem(container, position, object);
+    }
+
+    @Override
     public Fragment getItem(int position) {
         SingleNews_Fragment fragment = new SingleNews_Fragment();
         Bundle args = new Bundle();
-        args.putString(key,key);
+        args.putString("subStrings",subStrings[position]);
+        args.putString("keysStrings",keyStrings[position]);
         fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public int getCount() {
-        return subString.length;
+        return subStrings.length;
+    }
+
+    @Override
+    public int getItemPosition(Object object) {
+        return POSITION_NONE;
     }
 }

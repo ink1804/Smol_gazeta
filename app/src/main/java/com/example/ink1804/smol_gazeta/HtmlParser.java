@@ -1,17 +1,11 @@
 package com.example.ink1804.smol_gazeta;
 
-import android.app.Activity;
 import android.content.Context;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.ink1804.smol_gazeta.adapters.RecycleHotNewsAdapter;
@@ -40,8 +34,6 @@ public class HtmlParser {
     public void parseNewsBlock(String _url, String _theme, final Context context, final RecyclerView recyclerView){
         String URL = _url+"/"+_theme;
         cardNewsList = new ArrayList<>();
-        //наверное тут нужно будет создать лист и возвращать его, а возможно придется распарсить еще кусок кода
-        // из нижнего блока, посмотрим.
             try{
                 Ion.with(context)
                         .load(URL)
@@ -66,8 +58,6 @@ public class HtmlParser {
                                     Log.d("asd",item.date+"\n");
                                     cardNewsList.add(item);
                                 }
-                                //tv.setText(String.format("image: %s\n\nfullNews: %s\n\ncategory: %s\n\ntitle: %s\n\ndate: %s\n\nviews: %s"
-                                //    ,imageLink,fullNewsURL,category,title,date,views));
                                 RecycleListOfNewsAdapter im = new RecycleListOfNewsAdapter(cardNewsList,context);
                                 recyclerView.setAdapter(im);
                                 im.notifyDataSetChanged();
@@ -77,7 +67,6 @@ public class HtmlParser {
             e.printStackTrace();
         }
 
-       // Toast.makeText(context,list.get(1).category+ "", Toast.LENGTH_SHORT).show();
     }
     public FullNewsItem parseFullNews(String URL, final Context context, final TextView tv_title, final TextView tv_page, final ImageView image){
 
@@ -99,8 +88,6 @@ public class HtmlParser {
                 tv_page.setText(Html.fromHtml(pageS).toString());
                 tv_title.setText(titleS);
                 Glide.with(context).load(imageS).into(image);
-                //tv.setText(String.format("title: %s\n\nimage: %s\n\nother: %s"
-                //        ,fTitle,fImageLink, Html.fromHtml(fInfo).toString()));
             }
         });
         } catch (Exception e) {
@@ -117,7 +104,6 @@ public class HtmlParser {
                     .setCallback(new FutureCallback<String>() {
                         @Override
                         public void onCompleted(Exception e, String result) {
-
                             doc = Jsoup.parse(result);
                             for(int i=0;i<3;i++) {
                                 HotNewsItem item = new HotNewsItem();
