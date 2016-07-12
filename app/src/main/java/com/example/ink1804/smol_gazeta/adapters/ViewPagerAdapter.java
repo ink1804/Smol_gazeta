@@ -15,8 +15,8 @@ import com.example.ink1804.smol_gazeta.fragments.SingleNews_Fragment;
  */
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
-    String[] subStrings;
-    String[] keyStrings;
+    private String[] subStrings;
+    private String[] keyStrings;
 
     public ViewPagerAdapter(FragmentManager fm, String[] subStrings, String[] keyStrings) {
         super(fm);
@@ -27,12 +27,10 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public ViewPagerAdapter(FragmentManager fm) {
         super(fm);
     }
-
     @Override
     public CharSequence getPageTitle(int position) {
         return super.getPageTitle(position);
     }
-
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         super.destroyItem(container, position, object);

@@ -28,9 +28,8 @@ import java.util.List;
  */
 public class SingleNews_Fragment extends Fragment {
 
-    private String subString,keysString;
-    int position;
-    Context context;
+    private String keysString="";
+    private Context context;
     private String gazetaURL = "http://www.smolgazeta.ru";
 
     public SingleNews_Fragment() {
