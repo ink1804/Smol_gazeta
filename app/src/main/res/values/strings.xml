@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">Smol_gazeta</string>
 
+    <string-array name="main_subs">
+        <item>Главная</item>
+    </string-array>
+    <string-array name="main_keys">
+        <item>/</item>
+    </string-array>
+
     <string-array name="society_subs">
         <item>Политика</item>
         <item>Общество</item>
@@ -49,11 +56,11 @@
         <item>security</item>
     </string-array>
 
-    <string-array name="crime_subs">
+    <string-array name="accidents_subs">
         <item>Криминал</item>
         <item>Проишествия</item>
     </string-array>
-    <string-array name="crime_keys">
+    <string-array name="accidents_keys">
         <item>crime</item>
         <item>accident</item>
     </string-array>
@@ -65,16 +72,14 @@
         <item>documents</item>
     </string-array>
 
-    <string-array name="afisha_subs">
+    <string-array name="poster_subs">
         <item>Афиша</item>
     </string-array>
-    <string-array name="afisha_keys">
+    <string-array name="poster_keys">
         <item>afisha</item>
     </string-array>
 
-    <!--<string name="collapsed">collapsed: %s</string>-->
-    <!--<string name="expanded">expanded: %s</string>-->
-    <string name="theme_home">Главная</string>
+    <string name="theme_main">Главная</string>
     <string name="theme_society">Общество</string>
     <string name="theme_habitat">Среда обитания</string>
     <string name="theme_roads">Дороги</string>

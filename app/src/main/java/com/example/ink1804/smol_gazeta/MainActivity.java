@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         mViewPager = (ViewPager) findViewById(R.id.subMenu_pager);
+        setViewPagerAdapter(R.array.main_subs,R.array.main_keys);
 
         recycler_hotNews = (RecyclerView)findViewById(R.id.recycle_hot_news);
         recycler_hotNews.setLayoutManager(new LinearLayoutManager(this));
@@ -50,24 +51,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id){
+            case R.id.nav_main:
+                setViewPagerAdapter(R.array.main_subs,R.array.main_keys);
+                break;
             case R.id.nav_society:
-                subStrings = getResources().getStringArray(R.array.society_subs);
-                keyStrings = getResources().getStringArray(R.array.society_keys);
-                mPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), subStrings, keyStrings);
-                mViewPager.setAdapter(mPagerAdapter);
+                setViewPagerAdapter(R.array.society_subs,R.array.society_keys);
                 break;
             case R.id.nav_habitat:
-                subStrings = getResources().getStringArray(R.array.habitat_subs);
-                keyStrings = getResources().getStringArray(R.array.habitat_keys);
-                mPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), subStrings, keyStrings);
-                mViewPager.setAdapter(mPagerAdapter);
-
+                setViewPagerAdapter(R.array.habitat_subs,R.array.habitat_keys);
                 break;
-            case R.id.nav_roads:break;
-            case R.id.nav_security:break;
-            case R.id.nav_accidents:break;
-            case R.id.nav_documents:break;
-            case R.id.nav_poster:break;
+            case R.id.nav_roads:
+                setViewPagerAdapter(R.array.roads_subs,R.array.roads_keys);
+                break;
+            case R.id.nav_security:
+                setViewPagerAdapter(R.array.security_subs,R.array.security_keys);
+                break;
+            case R.id.nav_accidents:
+                setViewPagerAdapter(R.array.accidents_subs,R.array.accidents_keys);
+                break;
+            case R.id.nav_documents:
+                setViewPagerAdapter(R.array.documents_subs,R.array.documents_keys);
+                break;
+//            case R.id.nav_poster:
+//                setViewPagerAdapter(R.array.poster_subs,R.array.poster_keys);
+//                break;
         }
         DrawerLayout drawer = (DrawerLayout)findViewById(R.id.main_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -78,9 +85,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public Context getContext()  {
         return this;
     }
-    private void setViewPagerAdapter(String[] subStrings,String[] keyStrings){
-        mPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), subStrings, keyStrings);
-        //mViewPager.adapter
+    private void setViewPagerAdapter(int subStrings,int keyStrings){
+        String[] subs,keys;
+        subs = getResources().getStringArray(subStrings);
+        keys = getResources().getStringArray(keyStrings);
+        mPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), subs, keys);
         mViewPager.setAdapter(mPagerAdapter);
     }
 
