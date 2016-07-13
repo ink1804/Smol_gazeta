@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Smol_gazeta</string>
 
     <string-array name="main_subs">
         <item>Главная</item>
@@ -87,4 +86,7 @@
     <string name="theme_accidents">Проишествия</string>
     <string name="theme_documents">Документы</string>
     <string name="theme_poster">Афиша</string>
+    
+    <string name="app_name">Смоленская газета</string>
+    <string name="action_settings">Settings</string>
 </resources>

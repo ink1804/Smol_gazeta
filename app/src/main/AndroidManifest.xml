@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".FullNewsActivity"></activity>
+        <activity android:name=".ReclameActivity"></activity>
     </application>
 
 </manifest>

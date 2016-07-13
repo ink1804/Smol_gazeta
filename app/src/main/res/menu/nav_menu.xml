@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/nav_main"
+        android:title="@string/theme_main" />
+
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_main"
-            android:title="@string/theme_main"/>
         <item
             android:id="@+id/nav_society"
             android:title="@string/theme_society"/>
@@ -23,20 +24,7 @@
         <item
             android:id="@+id/nav_documents"
             android:title="@string/theme_documents"/>
-        <!--<item-->
-            <!--android:id="@+id/nav_poster"-->
-            <!--android:title="@string/theme_poster"/>-->
     </group>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:title="Share"/>
-            <item
-                android:id="@+id/nav_send"
-                android:title="Send"/>
-        </menu>
-    </item>
 
 </menu>
