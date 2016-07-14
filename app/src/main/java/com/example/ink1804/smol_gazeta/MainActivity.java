@@ -2,7 +2,7 @@ package com.example.ink1804.smol_gazeta;
 
 import android.content.Context;
 import android.content.Intent;
-import android.provider.ContactsContract;
+import android.graphics.Typeface;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
@@ -14,9 +14,12 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.ink1804.smol_gazeta.adapters.ViewPagerAdapter;
 import com.example.ink1804.smol_gazeta.fragments.SingleNews_Fragment;
@@ -98,7 +101,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
+        toolbar.setTitle("");
+        TextView toolbar_textView = (TextView)findViewById(R.id.toolbar_tv);
+        Typeface font = Typeface.createFromAsset(getAssets(),"fonts/minion_bold_cond_disp.otf");
+        toolbar_textView.setTypeface(font);
+        toolbar_textView.setText("СМОЛЕНСКАЯ ГАЗЕТА");
+
         setSupportActionBar(toolbar);
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.theme_main, R.string.theme_poster);
         drawer.setDrawerListener(toggle);
         toggle.syncState();

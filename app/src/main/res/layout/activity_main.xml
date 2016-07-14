@@ -12,7 +12,14 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary" />
+            android:background="?attr/colorPrimary" >
+            <TextView
+                android:id="@+id/toolbar_tv"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
 
 
@@ -58,6 +65,7 @@
                     />
 
             </LinearLayout>
+
             <android.support.v4.view.ViewPager
                 android:id="@+id/subMenu_pager"
                 android:layout_width="match_parent"
@@ -67,6 +75,7 @@
                 android:layout_below="@+id/tablayout"
                 android:textColor="@color/blue_light">
             </android.support.v4.view.ViewPager>
+
             <ScrollView
                 android:id="@+id/reclame"
                 android:layout_width="200dp"

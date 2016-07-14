@@ -31,9 +31,12 @@ public class HtmlParser {
     List<NewsItem> cardNewsList;
     List<HotNewsItem> hotNewsList;
     FullNewsItem item;
-    public void parseNewsBlock(String _url, String _theme, final Context context, final RecyclerView recyclerView){
+    int TTL=0;
+
+    public void parseNewsBlock(final String _url, final String _theme, final Context context, final RecyclerView recyclerView){
         String URL = _url+"/"+_theme;
         cardNewsList = new ArrayList<>();
+        if(TTL<10)
             try{
                 Ion.with(context)
                         .load(URL)
@@ -41,6 +44,10 @@ public class HtmlParser {
                         .setCallback(new FutureCallback<String>() {
                             @Override
                             public void onCompleted(Exception e, String result) {
+//                                if(result==null||result==""){
+//                                    TTL++;
+//                                    parseNewsBlock(_url,_theme,context,recyclerView);
+//                                }
                                 String text;
                                 doc = Jsoup.parse(result);
                                 Element myDiv = doc.select("div.news-list").first();
@@ -55,28 +62,31 @@ public class HtmlParser {
                                     item.date = doc.select("div.block").get(i).select("span.date").first().text();
                                     item.info = doc.select("div.block").get(i).select("div").get(4).text();
                                     item.views= doc.select("div.block").get(i).select("span.views").first().text();
-                                    Log.d("asd",item.date+"\n");
                                     cardNewsList.add(item);
                                 }
                                 RecycleListOfNewsAdapter im = new RecycleListOfNewsAdapter(cardNewsList,context);
                                 recyclerView.setAdapter(im);
                                 im.notifyDataSetChanged();
+                                TTL=0;
                             }
                         });
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
-    public FullNewsItem parseFullNews(String URL, final Context context, final TextView tv_title, final TextView tv_page, final ImageView image){
-
-        try {
+    public FullNewsItem parseFullNews(final String URL, final Context context, final TextView tv_title, final TextView tv_page, final ImageView image){
+        if(TTL<10)
+            try {
         Ion.with(context)
                 .load(URL)
                 .asString()
                 .setCallback(new FutureCallback<String>() {
             @Override
             public void onCompleted(Exception e, String result) {
+//                if(result==null||result==""){
+//                    TTL++;
+//                    parseFullNews(URL,context,tv_title,tv_page,image);
+//                }
                 String imageS,titleS,pageS;
                 doc = Jsoup.parse(result);
                 imageS = doc.select("div.text-block").first().select("img").attr("src");
@@ -88,6 +98,7 @@ public class HtmlParser {
                 tv_page.setText(Html.fromHtml(pageS).toString());
                 tv_title.setText(titleS);
                 Glide.with(context).load(imageS).into(image);
+                TTL=0;
             }
         });
         } catch (Exception e) {
@@ -104,6 +115,7 @@ public class HtmlParser {
                     .setCallback(new FutureCallback<String>() {
                         @Override
                         public void onCompleted(Exception e, String result) {
+
                             doc = Jsoup.parse(result);
                             for(int i=0;i<3;i++) {
                                 HotNewsItem item = new HotNewsItem();
