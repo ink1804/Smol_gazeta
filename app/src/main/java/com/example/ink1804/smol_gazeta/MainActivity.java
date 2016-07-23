@@ -1,14 +1,18 @@
 package com.example.ink1804.smol_gazeta;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -42,7 +46,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //reclame
         createReclameBlock();
         createNavigationDrawer();
+        if(isOnline())
         createRecyclerViews();
+        else
+            offlineMessageBox();
     }
 
     @Override
@@ -149,4 +156,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
     }
+    private boolean isOnline() {
+        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        if (networkInfo != null && networkInfo.isConnected()) {return true;}
+        else {return false;}
+    }
+    private void offlineMessageBox(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Ошибка подлючения к сети")
+                .setMessage("Проверте выход в интернет и повторите попытку снова")
+                .setCancelable(false)
+                .setNegativeButton("ОК",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                                finish();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
 }

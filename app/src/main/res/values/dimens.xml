@@ -25,4 +25,36 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <!--My application dimentions-->
+    <dimen name="toolbar_text_size">25sp</dimen>
+    <dimen name="margins">4dp</dimen>
+    <dimen name="navigation_width">200dp</dimen>
+    <!--hot_news-->
+    <dimen name="HOT">30sp</dimen>
+    <dimen name="hotnews_width">160dp</dimen>
+    <dimen name="hotnews_text_width">110dp</dimen>
+
+    <dimen name="hotnews_text_size">14sp</dimen>
+    <!--reclame-->
+    <dimen name="reclame_width">200dp</dimen>
+    <dimen name="reclame_image_size">200dp</dimen>
+    <dimen name="reclame_margins">8dp</dimen>
+    <!--full_news-->
+    <dimen name="fullnews_pagetext_size">20sp</dimen>
+    <dimen name="fullnews_margins">7dp</dimen>
+    <dimen name="fullnews_image_size">400dp</dimen>
+
+    <dimen name="fullnews_title_size">20sp</dimen>
+    <!--card-->
+    <dimen name="card_height">160dp</dimen>
+    <dimen name="card_corner">2dp</dimen>
+    <dimen name="card_image">220dp</dimen>
+    <dimen name="card_margins">3dp</dimen>
+
+    <dimen name="card_date_size">16sp</dimen>
+    <dimen name="card_views_size">15sp</dimen>
+    <dimen name="card_category_size">20sp</dimen>
+    <dimen name="card_title_size">18sp</dimen>
+    <dimen name="card_info_size">13sp</dimen>
+    <!---->
 </resources>

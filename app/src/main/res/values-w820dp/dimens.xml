@@ -3,4 +3,39 @@
          (such as screen margins) for screens with more than 820dp of available width. This
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively). -->
     <dimen name="activity_horizontal_margin">64dp</dimen>
+
+
+    <!--My application dimentions-->
+    <dimen name="toolbar_text_size">25sp</dimen>
+
+    <dimen name="margins">4dp</dimen>
+
+    <dimen name="navigation_width">200dp</dimen>
+    <!--hot_news-->
+    <dimen name="HOT">30sp</dimen>
+    <dimen name="hotnews_width">220dp</dimen>
+    <dimen name="hotnews_text_width">160sp</dimen>
+
+    <dimen name="hotnews_text_size">21sp</dimen>
+    <!--reclame-->
+    <dimen name="reclame_width">250dp</dimen>
+    <dimen name="reclame_image_size">250dp</dimen>
+    <!--full_news-->
+    <dimen name="fullnews_margins">7dp</dimen>
+    <dimen name="fullnews_image_size">400dp</dimen>
+
+    <dimen name="fullnews_pagetext_size">20sp</dimen>
+    <dimen name="fullnews_title_size">25sp</dimen>
+    <!--card-->
+    <dimen name="card_height">210dp</dimen>
+    <dimen name="card_corner">2dp</dimen>
+    <dimen name="card_image">280dp</dimen>
+    <dimen name="card_margins">3dp</dimen>
+
+    <dimen name="card_date_size">21sp</dimen>
+    <dimen name="card_views_size">20sp</dimen>
+    <dimen name="card_category_size">25sp</dimen>
+    <dimen name="card_title_size">25sp</dimen>
+    <dimen name="card_info_size">18sp</dimen>
+    <!---->
 </resources>

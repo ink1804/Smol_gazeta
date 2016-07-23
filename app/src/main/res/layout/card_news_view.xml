@@ -10,15 +10,15 @@
         android:layout_margin="4dp"
         android:elevation="6dp"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        app:cardCornerRadius="2dp"
+        android:layout_height="@dimen/card_height"
+        app:cardCornerRadius="@dimen/card_corner"
         style="@style/CardView">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <ImageView
             android:id="@+id/card_imageView"
-            android:layout_width="220dp"
+            android:layout_width="@dimen/card_image"
             android:background="@drawable/border"
             android:src="@drawable/border"
             android:layout_height="match_parent"
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="3dp">
+            android:layout_margin="@dimen/card_margins">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
                 android:id="@+id/card_tv_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="@dimen/card_date_size"
                 android:layout_gravity="center"
                 android:textColor="#c01"
                 android:text="date"/>
@@ -54,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textSize="15sp"
+                android:textSize="@dimen/card_views_size"
                 android:layout_marginLeft="3dp"
                 android:textColor="#bbb"
                 android:text="views"/>
@@ -63,7 +63,7 @@
                 android:id="@+id/card_tv_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="@dimen/card_category_size"
                 android:textColor="#888"
                 android:layout_gravity="right"
                 android:text="category"/>
@@ -71,14 +71,14 @@
                 android:id="@+id/card_tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:textSize="@dimen/card_title_size"
                 android:textColor="#000"
                 android:text="title"/>
             <TextView
                 android:id="@+id/card_tv_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="13sp"
+                android:textSize="@dimen/card_info_size"
                 android:textColor="#666"
                 android:text="info"/>
         </LinearLayout>
