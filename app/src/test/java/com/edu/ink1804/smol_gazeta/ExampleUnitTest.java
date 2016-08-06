@@ -1,4 +1,4 @@
-package com.example.ink1804.smol_gazeta;
+package com.edu.ink1804.smol_gazeta;
 
 import org.junit.Test;
 

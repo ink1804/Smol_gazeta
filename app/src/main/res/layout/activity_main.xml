@@ -30,7 +30,7 @@
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.example.ink1804.smol_gazeta.MainActivity"
+        tools:context="com.edu.ink1804.smolgazeta.MainActivity"
         tools:openDrawer="start">
         <RelativeLayout
             android:layout_width="match_parent"

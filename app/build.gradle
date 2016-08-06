@@ -1,11 +1,18 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'SmolGazeta'
+            keyPassword 'IhN1Q*t1'
+            storeFile file('/Users/Ink1804/AndroidStudioProjects/signedApkKeys.jks')
+            storePassword 'IhN1Q*t1'
+        }
+    }
     compileSdkVersion 24
     buildToolsVersion "23.0.3"
-
     defaultConfig {
-        applicationId "com.example.ink1804.smol_gazeta"
+        applicationId "com.edu.ink1804.smolgazeta"
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
@@ -15,6 +22,9 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.config
         }
     }
 }
